@@ -30,12 +30,12 @@ public class ReadWriteLockDemo {
                 myCache.get(tempInt + "");
             }, "Thread " + i).start();
         }
-        for (int i = 1; i <= 5; i++) {
-            final int tempInt = i;
-            new Thread(() -> {
-                myCache.put(tempInt + "", tempInt * 2);
-            }, "Thread====" + i).start();
-        }
+//        for (int i = 1; i <= 5; i++) {
+//            final int tempInt = i;
+//            new Thread(() -> {
+//                myCache.put(tempInt + "", tempInt * 2);
+//            }, "Thread====" + i).start();
+//        }
     }
 }
 
