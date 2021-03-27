@@ -3,7 +3,6 @@ package javatest001;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * 容器线程修改不安全异常demo
  * @author lws
