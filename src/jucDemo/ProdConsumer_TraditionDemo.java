@@ -5,7 +5,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * lws
  * 一个初始值为零的变量，两个线程对其交替操作，一个加1一个减1，来5轮
  * 1. 线程  操作  资源类
  * 2. 判断  干活  通知
