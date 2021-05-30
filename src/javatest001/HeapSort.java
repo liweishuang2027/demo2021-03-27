@@ -21,6 +21,25 @@ public class HeapSort {
         heap.printPart(array, 0, array.length - 1);
     }
 	 
+   public void heapSort(int[] list) {
+        // 循环建立初始堆
+        for (int i = list.length / 2; i >= 0; i--) {
+            HeapAdjust(list, i, list.length);
+        }
+        // 进行n-1次循环，完成排序
+        for (int i = list.length - 1; i > 0; i--) {
+            // 最后一个元素和第一元素进行交换
+            int temp = list[i];
+            list[i] = list[0];
+            list[0] = temp;
+ 
+            // 筛选 R[0] 结点，得到i-1个结点的堆
+            HeapAdjust(list, 0, i);
+            System.out.format("第 %d 趟: \t", list.length - i);
+            printPart(list, 0, list.length - 1);
+        }
+    }
+	
     public void HeapAdjust(int[] array, int parent, int length) {
         int temp = array[parent]; // temp保存当前父节点
         int child = 2 * parent + 1; // 先获得左孩子
@@ -44,26 +63,6 @@ public class HeapSort {
         }
  
         array[parent] = temp;
-    }
- 
-    public void heapSort(int[] list) {
-        // 循环建立初始堆
-        for (int i = list.length / 2; i >= 0; i--) {
-            HeapAdjust(list, i, list.length);
-        }
- 
-        // 进行n-1次循环，完成排序
-        for (int i = list.length - 1; i > 0; i--) {
-            // 最后一个元素和第一元素进行交换
-            int temp = list[i];
-            list[i] = list[0];
-            list[0] = temp;
- 
-            // 筛选 R[0] 结点，得到i-1个结点的堆
-            HeapAdjust(list, 0, i);
-            System.out.format("第 %d 趟: \t", list.length - i);
-            printPart(list, 0, list.length - 1);
-        }
     }
  
     // 打印序列
